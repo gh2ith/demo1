@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login &mdash; HR Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #F7FAFC; color: #172033; margin: 0; padding: 40px 20px; }
+    .portal-box { max-width: 480px; margin: 40px auto; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 36px; box-shadow: 0 4px 20px rgba(23,32,51,0.06); }
+    h1 { font-family: 'Quantico', sans-serif; font-size: 24px; margin-top: 0; color: #172033; }
+    p { color: #64748B; line-height: 1.6; font-size: 14px; }
+    .input-row { margin-bottom: 16px; }
+    label { display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px; }
+    input { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 14px; }
+    .submit-btn { width: 100%; background: #0079F1; color: #FFFFFF; padding: 12px; border-radius: 6px; border: none; font-weight: 700; font-family: 'Quantico', sans-serif; letter-spacing: 0.04em; cursor: pointer; margin-top: 10px; }
+    .submit-btn:hover { background: #0066CC; }
+    .back-btn { display: inline-block; color: #64748B; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 18px; }
+    .back-btn:hover { color: #0079F1; }
+  </style>
+</head>
+<body>
+  <div class="portal-box">
+    <h1>Sign In to HR Portal</h1>
+    <p>Access your employee workspace, tasks, leave balance, and administrative controls.</p>
+    <div class="input-row">
+      <label>Email Address</label>
+      <input type="email" placeholder="name@company.com" value="demo@company.com" />
+    </div>
+    <div class="input-row">
+      <label>Password</label>
+      <input type="password" value="••••••••••••" />
+    </div>
+    <button type="button" class="submit-btn" onclick="alert('Demo Login: Access Granted!')">SIGN IN &rarr;</button>
+    <br/>
+    <a href="index.html" class="back-btn">&larr; Return to Road Journey</a>
+  </div>
+</body>
+</html>

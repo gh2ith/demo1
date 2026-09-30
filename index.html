@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR Management &mdash; Scaling the Platform for Your Business | Continuous Journey</title>
+  <meta name="description" content="Explore the HR Management System road journey: Scaling the platform, About business, Leave Application, Employee Directory, Policies, Tasks, Feedback, Stats, and Contact Destination." />
+
+  <!-- Google Fonts: Quantico (Headings) and Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Scoped Journey Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="landing-journey.css" />
+
+  <!-- GSAP 3.12.5 & ScrollTrigger via Verified Fast CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Root Scoped Wrapper -->
+  <div class="journey">
+
+    <!-- Accessible Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Polite Live Region for Screen Readers -->
+    <div id="journeyAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;"></div>
+
+    <!-- ======================================================================
+         UI CHROME: PERSISTENT HEADER (LOGO + PERSISTENT NAVBAR + LOGIN)
+         ====================================================================== -->
+    <header class="journey-header" id="siteHeader">
+      <a href="#stop-0" class="journey-logo" aria-label="HR Management Home" data-jump="0">
+        <span class="logo-disc" aria-hidden="true">
+          <span class="logo-ellipse"></span>
+        </span>
+        <span class="logo-text-wrap">
+          <span class="logo-title">HR Management</span>
+          <span class="logo-sub">Enterprise System</span>
+        </span>
+      </a>
+
+      <!-- Independent Top Navigation Links -->
+      <nav class="journey-nav-menu" aria-label="Main Navigation">
+        <a href="#stop-0" class="nav-menu-link active" data-jump="0">Home</a>
+        <a href="#stop-1" class="nav-menu-link" data-jump="1">About</a>
+        <a href="#stop-2" class="nav-menu-link" data-jump="2">Services</a>
+        <a href="#stop-7" class="nav-menu-link" data-jump="7">Stats</a>
+        <a href="#stop-8" class="nav-menu-link" data-jump="8">Contact</a>
+      </nav>
+
+      <!-- Always-Visible Login Button calling existing route -->
+      <a href="login.html" class="header-login-btn" aria-label="Sign in to the HR Management System">
+        <span>Login</span>
+        <span class="header-login-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </header>
+
+    <!-- Mobile Compact Step Pill -->
+    <div class="mobile-progress-pill" id="mobileProgressPill" aria-hidden="true">
+      01 / 09 &bull; Home
+    </div>
+
+    <!-- Side Navigation Bar (Desktop) - 9 Stops -->
+    <nav class="journey-side-nav" aria-label="Journey Progress Steps">
+      <a href="#" class="side-step-link" data-step-index="0" aria-current="step">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">01 Home</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="1">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">02 About</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="2">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">03 Leave</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="3">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">04 Employees</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="4">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">05 Policies</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="5">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">06 Tasks</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="6">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">07 Feedback</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="7">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">08 Stats</span>
+      </a>
+      <a href="#" class="side-step-link" data-step-index="8">
+        <span class="side-step-bullet"></span>
+        <span class="side-step-title">09 Contact</span>
+      </a>
+    </nav>
+
+    <!-- Next Stop Hint at Screen Bottom -->
+    <div class="journey-next-hint" aria-hidden="true">
+      <span id="nextStopHintText">NEXT: STOP 02 &mdash; ABOUT</span>
+    </div>
+
+    <!-- ======================================================================
+         PINNED FULL-VIEWPORT STAGE (100svh / dvh)
+         ====================================================================== -->
+    <div class="journey-stage" id="journeyStage">
+
+      <!-- Layer 1: Background Parallax Layer -->
+      <div class="journey-bg-layer" aria-hidden="true">
+        <div class="journey-bg-grid"></div>
+      </div>
+
+      <!-- Layer 2: World Wrapper (Road SVG + Traveler) -->
+      <div class="journey-world-wrapper" id="journeyWorld">
+        <svg
+          class="journey-road-svg"
+          id="journeyRoadSvg"
+          viewBox="0 0 2000 7000"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true">
+
+          <defs>
+            <linearGradient id="roadGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#005BB5" />
+              <stop offset="100%" stop-color="#0079F1" />
+            </linearGradient>
+          </defs>
+
+          <!-- 1. Road Edge / Curb / Shoulder Base -->
+          <path
+            class="road-edge"
+            d="M 1000 400 C 1300 650, 1600 850, 1450 1150 C 1300 1450, 950 1650, 1200 1950 C 1450 2250, 300 2450, 550 2750 C 800 3050, 600 3250, 750 3550 C 900 3850, 1600 4050, 1400 4350 C 1200 4650, 850 4850, 1100 5150 C 1350 5450, 350 5650, 600 5950 C 850 6250, 950 6450, 1000 6700 L 1000 6820" />
+
+          <!-- 2. Road Bed Base (Dark Navy / Blue-Gray Road) -->
+          <path
+            class="road-bed"
+            d="M 1000 400 C 1300 650, 1600 850, 1450 1150 C 1300 1450, 950 1650, 1200 1950 C 1450 2250, 300 2450, 550 2750 C 800 3050, 600 3250, 750 3550 C 900 3850, 1600 4050, 1400 4350 C 1200 4650, 850 4850, 1100 5150 C 1350 5450, 350 5650, 600 5950 C 850 6250, 950 6450, 1000 6700 L 1000 6820" />
+
+          <!-- 3. Dashed Centerline -->
+          <path
+            class="road-dash"
+            d="M 1000 400 C 1300 650, 1600 850, 1450 1150 C 1300 1450, 950 1650, 1200 1950 C 1450 2250, 300 2450, 550 2750 C 800 3050, 600 3250, 750 3550 C 900 3850, 1600 4050, 1400 4350 C 1200 4650, 850 4850, 1100 5150 C 1350 5450, 350 5650, 600 5950 C 850 6250, 950 6450, 1000 6700" />
+
+          <!-- 4. Glowing Progress Trail behind Traveler -->
+          <path
+            id="journeyRoadTrail"
+            class="road-trail"
+            d="M 1000 400 C 1300 650, 1600 850, 1450 1150 C 1300 1450, 950 1650, 1200 1950 C 1450 2250, 300 2450, 550 2750 C 800 3050, 600 3250, 750 3550 C 900 3850, 1600 4050, 1400 4350 C 1200 4650, 850 4850, 1100 5150 C 1350 5450, 350 5650, 600 5950 C 850 6250, 950 6450, 1000 6700" />
+
+          <!-- 5. Mathematical Path used by getPointAtLength -->
+          <path
+            id="journeyRoadPath"
+            d="M 1000 400 C 1300 650, 1600 850, 1450 1150 C 1300 1450, 950 1650, 1200 1950 C 1450 2250, 300 2450, 550 2750 C 800 3050, 600 3250, 750 3550 C 900 3850, 1600 4050, 1400 4350 C 1200 4650, 850 4850, 1100 5150 C 1350 5450, 350 5650, 600 5950 C 850 6250, 950 6450, 1000 6700"
+            fill="none"
+            stroke="transparent"
+            stroke-width="1" />
+
+          <!-- 9 Road Nodes -->
+          <!-- Node 0: Start / Home (1000, 400) -->
+          <g class="road-node active" id="node-0" transform="translate(1000, 400)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">HOME</text>
+          </g>
+
+          <!-- Node 1: About (1450, 1150) -->
+          <g class="road-node" id="node-1" transform="translate(1450, 1150)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">ABOUT</text>
+          </g>
+
+          <!-- Node 2: Leave Application (1200, 1950) -->
+          <g class="road-node" id="node-2" transform="translate(1200, 1950)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">LEAVE</text>
+          </g>
+
+          <!-- Node 3: Employee Directory (550, 2750) -->
+          <g class="road-node" id="node-3" transform="translate(550, 2750)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">EMPLOYEES</text>
+          </g>
+
+          <!-- Node 4: Company Policies (750, 3550) -->
+          <g class="road-node" id="node-4" transform="translate(750, 3550)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">POLICIES</text>
+          </g>
+
+          <!-- Node 5: Task Management (1400, 4350) -->
+          <g class="road-node" id="node-5" transform="translate(1400, 4350)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">TASKS</text>
+          </g>
+
+          <!-- Node 6: Feedback System (1100, 5150) -->
+          <g class="road-node" id="node-6" transform="translate(1100, 5150)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">FEEDBACK</text>
+          </g>
+
+          <!-- Node 7: Stats (600, 5950) -->
+          <g class="road-node" id="node-7" transform="translate(600, 5950)">
+            <circle class="node-outer-ring" r="22" />
+            <circle class="node-inner-core" r="10" />
+            <text class="node-label-svg" y="42">STATS</text>
+          </g>
+
+          <!-- Node 8: Contact / Destination (1000, 6700) -->
+          <g class="road-node" id="node-8" transform="translate(1000, 6700)">
+            <circle class="node-outer-ring node-finish-ring" r="26" />
+            <circle class="node-inner-core node-finish-core" r="12" />
+            <text class="node-label-svg" y="48">CONTACT</text>
+          </g>
+        </svg>
+
+        <!-- Traveler Element with Tangent Rotation -->
+        <div class="traveler-group" id="journeyTraveler">
+          <div class="traveler-glow"></div>
+          <div class="traveler-core"></div>
+        </div>
+      </div><!-- End World Wrapper -->
+
+      <!-- LAYER 2.5: DYNAMIC CONNECTOR (SPANS ALL THE WAY TO ACTIVE ROAD NODE) -->
+      <svg class="journey-connector-svg" id="journeyConnectorSvg" aria-hidden="true">
+        <path class="connector-road-line" id="connectorRoadLine" d="" />
+        <circle class="connector-card-pip" id="connectorCardPip" r="3.5" cx="0" cy="0" />
+        <circle class="connector-node-pip" id="connectorNodePip" r="3.5" cx="0" cy="0" />
+      </svg>
+
+      <!-- ====================================================================
+           LAYER 3: CONTENT STACK (9 SUBSTANTIAL ROAD DESTINATIONS)
+           ==================================================================== -->
+      <main id="main-content" class="journey-stops-container">
+
+        <!-- STOP 1: HOME / HERO -->
+        <section class="stop-panel pos-left pos-hero is-active" id="stop-0" data-stop-index="0" aria-label="Stop 1: Home">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 01 / 09 &bull; PLATFORM HERO
+            </span>
+          </div>
+          <h1 class="stop-headline">Scaling the platform for your business</h1>
+          <p class="stop-supporting">
+            Manage your people with one system. A connected HR platform for employees, tasks, leave, policies, feedback, and workplace communication.
+          </p>
+          <div class="stop-chips-row">
+            <span class="chip-item">Employees</span>
+            <span class="chip-item">Tasks</span>
+            <span class="chip-item">Leave</span>
+            <span class="chip-item">Policies</span>
+            <span class="chip-item">Feedback</span>
+          </div>
+          <div class="stop-actions-row">
+            <button type="button" class="stop-cta-btn" id="beginJourneyBtn" data-jump="1">
+              <span>Get started</span>
+              <span class="btn-icon" aria-hidden="true">&darr;</span>
+            </button>
+            <a href="login.html" class="stop-secondary-link">Sign In &rarr;</a>
+          </div>
+          <div class="start-scroll-hint" id="startScrollHint">
+            <span>Scroll to explore the journey &darr;</span>
+          </div>
+        </section>
+
+        <!-- STOP 2: ABOUT -->
+        <section class="stop-panel pos-left pos-about" id="stop-1" data-stop-index="1" inert aria-hidden="true" aria-label="Stop 2: About">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 02 / 09 &bull; ABOUT BUSINESS
+            </span>
+          </div>
+          <h2 class="stop-headline">About business</h2>
+          <p class="stop-supporting">
+            Targo builds the testing infrastructure modern teams rely on. From automated pipelines to full-scale QA audits, we make sure your software ships fast and breaks nothing.
+          </p>
+          <div class="stop-chips-row">
+            <span class="chip-item">Automated Pipelines</span>
+            <span class="chip-item">Full-scale QA Audits</span>
+            <span class="chip-item">Zero Surprises</span>
+            <span class="chip-item">Continuous Delivery</span>
+          </div>
+          <p class="stop-editorial-note">
+            Hundreds of releases, zero surprises. Reliable operations aligned in real time with enterprise-grade security and role-based access.
+          </p>
+          <div class="stop-actions-row">
+            <a href="login.html" class="stop-cta-btn">
+              <span>Learn more</span>
+              <span class="btn-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <button type="button" class="stop-secondary-link" data-jump="2">
+              Next: Leave Application &darr;
+            </button>
+          </div>
+        </section>
+
+        <!-- STOP 3: SERVICE 1 — LEAVE APPLICATION -->
+        <section class="stop-panel pos-right pos-service-card" id="stop-2" data-stop-index="2" inert aria-hidden="true" aria-label="Stop 3: Leave Application">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 03 / 09 &bull; HR PORTAL
+            </span>
+          </div>
+          <h2 class="stop-headline">Leave Application</h2>
+          <p class="stop-supporting">
+            Form for leave type, dates, and reason with local storage support.
+          </p>
+
+          <!-- Miniature UI Preview: Leave Application Form -->
+          <div class="mini-ui-card mini-ui-leave" aria-hidden="true">
+            <div class="mini-ui-header">
+              <span class="mini-ui-title">Request Time-Off</span>
+              <span class="mini-ui-badge">Balance: 18 Days</span>
+            </div>
+            <div class="mini-ui-body">
+              <div class="mini-input-group">
+                <span class="mini-input-label">Leave Type</span>
+                <div class="mini-input-field select-field">Annual Vacation &bull; Paid Time Off</div>
+              </div>
+              <div class="mini-input-row">
+                <div class="mini-input-group half">
+                  <span class="mini-input-label">Start Date</span>
+                  <div class="mini-input-field">Oct 12, 2026</div>
+                </div>
+                <div class="mini-input-group half">
+                  <span class="mini-input-label">End Date</span>
+                  <div class="mini-input-field">Oct 16, 2026</div>
+                </div>
+              </div>
+              <div class="mini-input-group">
+                <span class="mini-input-label">Reason</span>
+                <div class="mini-input-field muted-text">Annual family vacation &amp; rest</div>
+              </div>
+              <div class="mini-ui-status-bar">
+                <span class="status-indicator-dot"></span>
+                <span>4 Working Days Requested &bull; Pending Lead Sign-off</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stop-actions-row">
+            <a href="leave-hr.html" class="stop-cta-btn">
+              <span>Open Leave Portal</span>
+              <span class="btn-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <button type="button" class="stop-secondary-link" data-jump="3">
+              Next: Employees &darr;
+            </button>
+          </div>
+        </section>
+
+        <!-- STOP 4: SERVICE 2 — EMPLOYEE DIRECTORY -->
+        <section class="stop-panel pos-left pos-service-card" id="stop-3" data-stop-index="3" inert aria-hidden="true" aria-label="Stop 4: View Employees Information">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 04 / 09 &bull; DIRECTORY
+            </span>
+          </div>
+          <h2 class="stop-headline">View Employees Information</h2>
+          <p class="stop-supporting">
+            Searchable employee table populated from JSON data.
+          </p>
+
+          <!-- Miniature UI Preview: Employee Directory Table -->
+          <div class="mini-ui-card mini-ui-employees" aria-hidden="true">
+            <div class="mini-ui-search-bar">
+              <span class="mini-search-icon">&telrec;</span>
+              <span class="mini-search-placeholder">Search employees by name, role, department...</span>
+            </div>
+            <div class="mini-table-wrap">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th>NAME</th>
+                    <th>DEPARTMENT</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Ahmed</strong></td>
+                    <td>IT / Infrastructure</td>
+                    <td><span class="mini-tag tag-green">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sara</strong></td>
+                    <td>Human Resources</td>
+                    <td><span class="mini-tag tag-green">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Omar</strong></td>
+                    <td>Finance &amp; Operations</td>
+                    <td><span class="mini-tag tag-green">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="stop-actions-row">
+            <a href="employees.html" class="stop-cta-btn">
+              <span>View Employees</span>
+              <span class="btn-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <button type="button" class="stop-secondary-link" data-jump="4">
+              Next: Policies &darr;
+            </button>
+          </div>
+        </section>
+
+        <!-- STOP 5: SERVICE 3 — COMPANY POLICIES -->
+        <section class="stop-panel pos-right pos-service-card" id="stop-4" data-stop-index="4" inert aria-hidden="true" aria-label="Stop 5: Company Policies">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 05 / 09 &bull; GOVERNANCE
+            </span>
+          </div>
+          <h2 class="stop-headline">Company Policies</h2>
+          <p class="stop-supporting">
+            Workspace policy directory loaded dynamically from JSON.
+          </p>
+
+          <!-- Miniature UI Preview: Policy Document List -->
+          <div class="mini-ui-card mini-ui-policies" aria-hidden="true">
+            <div class="mini-ui-header">
+              <span class="mini-ui-title">Company Policy Directory</span>
+              <span class="mini-ui-badge">v2.4 Verified</span>
+            </div>
+            <div class="mini-docs-list">
+              <div class="mini-doc-item">
+                <span class="doc-bullet">&rtrif;</span>
+                <span class="doc-name">Attendance &amp; Punctuality Policy</span>
+                <span class="doc-badge">Core</span>
+              </div>
+              <div class="mini-doc-item">
+                <span class="doc-bullet">&rtrif;</span>
+                <span class="doc-name">Leave &amp; Time-Off Guidelines</span>
+                <span class="doc-badge">HR</span>
+              </div>
+              <div class="mini-doc-item">
+                <span class="doc-bullet">&rtrif;</span>
+                <span class="doc-name">Workplace Code of Conduct</span>
+                <span class="doc-badge">Ethics</span>
+              </div>
+              <div class="mini-doc-item">
+                <span class="doc-bullet">&rtrif;</span>
+                <span class="doc-name">Remote Work &amp; IT Security</span>
+                <span class="doc-badge">Tech</span>
+              </div>
+              <div class="mini-doc-item">
+                <span class="doc-bullet">&rtrif;</span>
+                <span class="doc-name">Employee Rights &amp; Standards</span>
+                <span class="doc-badge">Legal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stop-actions-row">
+            <a href="policies.html" class="stop-cta-btn">
+              <span>Company Policies</span>
+              <span class="btn-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <button type="button" class="stop-secondary-link" data-jump="5">
+              Next: Tasks &darr;
+            </button>
+          </div>
+        </section>
+
+        <!-- STOP 6: SERVICE 4 — TASK MANAGEMENT -->
+        <section class="stop-panel pos-left pos-service-card" id="stop-5" data-stop-index="5" inert aria-hidden="true" aria-label="Stop 6: Task Management">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 06 / 09 &bull; WORKFLOW
+            </span>
+          </div>
+          <h2 class="stop-headline">Task Management</h2>
+          <p class="stop-supporting">
+            Task creation, assignment, and status updates stored in local storage.
+          </p>
+
+          <!-- Miniature UI Preview: Task Board / Checklist -->
+          <div class="mini-ui-card mini-ui-tasks" aria-hidden="true">
+            <div class="mini-tasks-header">
+              <span class="mini-tasks-title">TASKS PIPELINE</span>
+              <div class="mini-stepper-row">
+                <span class="stepper-crumb active">Create</span>
+                <span class="stepper-arrow">&rarr;</span>
+                <span class="stepper-crumb active">Assign</span>
+                <span class="stepper-arrow">&rarr;</span>
+                <span class="stepper-crumb active">Work</span>
+                <span class="stepper-arrow">&rarr;</span>
+                <span class="stepper-crumb">Complete</span>
+              </div>
+            </div>
+            <div class="mini-task-checklist">
+              <div class="mini-task-row completed">
+                <span class="task-check-icon">&check;</span>
+                <span class="task-text">Create landing page</span>
+                <span class="task-badge done">Done</span>
+              </div>
+              <div class="mini-task-row completed">
+                <span class="task-check-icon">&check;</span>
+                <span class="task-text">Review employee data</span>
+                <span class="task-badge done">Done</span>
+              </div>
+              <div class="mini-task-row in-progress">
+                <span class="task-check-icon">&rarr;</span>
+                <span class="task-text">Update documentation</span>
+                <span class="task-badge progress">In Progress</span>
+              </div>
+              <div class="mini-task-row pending">
+                <span class="task-check-icon">&cir;</span>
+                <span class="task-text">Prepare presentation</span>
+                <span class="task-badge queue">Queued</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stop-actions-row">
+            <a href="tasks.html" class="stop-cta-btn">
+              <span>Manage Tasks</span>
+              <span class="btn-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <button type="button" class="stop-secondary-link" data-jump="6">
+              Next: Feedback &darr;
+            </button>
+          </div>
+        </section>
+
+        <!-- STOP 7: SERVICE 5 — FEEDBACK SYSTEM -->
+        <section class="stop-panel pos-right pos-service-card" id="stop-6" data-stop-index="6" inert aria-hidden="true" aria-label="Stop 7: Feedback System">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 07 / 09 &bull; COMMUNICATION
+            </span>
+          </div>
+          <h2 class="stop-headline">Feedback System</h2>
+          <p class="stop-supporting">
+            Direct feedback submission form saved into local storage.
+          </p>
+
+          <!-- Miniature UI Preview: Feedback Form -->
+          <div class="mini-ui-card mini-ui-feedback" aria-hidden="true">
+            <div class="mini-ui-header">
+              <span class="mini-ui-title">Send Feedback</span>
+              <span class="mini-ui-badge">Direct Channel</span>
+            </div>
+            <div class="mini-ui-body">
+              <div class="mini-input-group">
+                <span class="mini-input-label">Subject</span>
+                <div class="mini-input-field">Workspace Tooling &amp; Workflow Review</div>
+              </div>
+              <div class="mini-input-group">
+                <span class="mini-input-label">Message</span>
+                <div class="mini-input-field multiline">The automated task delegation and leave approvals have improved department coordination...</div>
+              </div>
+              <div class="mini-submit-bar">
+                <span class="mini-btn-mockup">[ Submit Feedback ]</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stop-actions-row">
+            <a href="feedback.html" class="stop-cta-btn">
+              <span>Submit Feedback</span>
+              <span class="btn-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <button type="button" class="stop-secondary-link" data-jump="7">
+              Next: Stats &darr;
+            </button>
+          </div>
+        </section>
+
+        <!-- STOP 8: STATS / METRICS -->
+        <section class="stop-panel pos-left pos-stats" id="stop-7" data-stop-index="7" inert aria-hidden="true" aria-label="Stop 8: Statistics">
+          <div class="panel-header-row">
+            <span class="stop-kicker">
+              <span class="kicker-pip" aria-hidden="true"></span>
+              STOP 08 / 09 &bull; PLATFORM METRICS
+            </span>
+          </div>
+          <h2 class="stop-headline">Platform Scale &amp; Performance</h2>
+          <p class="stop-supporting">
+            Measurable operations scaling across modern teams with high reliability and zero downtime surprises:
+          </p>
+
+          <!-- 3 Dedicated Stat Cards -->
+          <div class="stats-metrics-grid">
+            <div class="metric-feature-card">
+              <div class="metric-top-bar">
+                <span class="metric-number">100+</span>
+                <span class="metric-tag tag-blue">Live</span>
+              </div>
+              <div class="metric-label">Employees Managed</div>
+              <p class="metric-subtext">Active personnel across engineering, operations, and leadership.</p>
+              <div class="metric-bar-wrap">
+                <div class="metric-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+
+            <div class="metric-feature-card">
+              <div class="metric-top-bar">
+                <span class="metric-number">50+</span>
+                <span class="metric-tag tag-emerald">Delivered</span>
+              </div>
+              <div class="metric-label">Tasks Completed</div>
+              <p class="metric-subtext">Tracked and executed through transparent automated milestone pipelines.</p>
+              <div class="metric-bar-wrap">
+                <div class="metric-bar-fill fill-emerald" style="width: 95%;"></div>
+              </div>
+            </div>
+
+            <div class="metric-feature-card">
+              <div class="metric-top-bar">
+                <span class="metric-number">12</span>
+                <span class="metric-tag tag-purple">Synced</span>
+              </div>
+              <div class="metric-label">Departments</div>
+              <p class="metric-subtext">Connected across IT, HR, Finance, Product, and Support teams.</p>
+              <div class="metric-bar-wrap">
+                <div class="metric-bar-fill fill-purple" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-footer-row">
+            <div class="stats-status-pill">
+              <span class="status-dot-pulse"></span>
+              <span>All 12 Departments Connected &bull; 99.98% System Uptime</span>
+            </div>
+            <div class="stop-actions-row">
+              <a href="login.html" class="stop-cta-btn">
+                <span>Enter Workspace</span>
+                <span class="btn-icon" aria-hidden="true">&rarr;</span>
+              </a>
+              <button type="button" class="stop-secondary-link" data-jump="8">
+                Next: Contact &darr;
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- STOP 9: CONTACT + FOOTER (FINAL ROAD DESTINATION) -->
+        <section class="stop-panel pos-center pos-destination" id="stop-8" data-stop-index="8" inert aria-hidden="true" aria-label="Stop 9: Contact and Footer">
+
+          <!-- Destination Arrival Header -->
+          <div class="destination-arrival-header">
+            <span class="stop-kicker destination-kicker">
+              <span class="kicker-pip finish-pip" aria-hidden="true"></span>
+              FINAL DESTINATION &bull; STOP 09 / 09
+            </span>
+            <h2 class="stop-headline destination-headline">HR Management</h2>
+            <p class="destination-tagline">
+              Empowering people and simplifying HR for modern teams.
+            </p>
+          </div>
+
+          <!-- Integrated Destination Content Grid (4 Columns) -->
+          <div class="destination-grid">
+
+            <!-- Col 1: Brand & Socials -->
+            <div class="dest-col dest-col-brand">
+              <h4 class="dest-col-heading">ABOUT SYSTEM</h4>
+              <p class="dest-brand-mission">
+                Empowering people and simplifying HR for modern teams. A unified infrastructure for personnel directory, task delegation, leave approval, and corporate compliance.
+              </p>
+              <div class="dest-socials-row" aria-label="Social media channels">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div class="dest-col dest-col-links">
+              <h4 class="dest-col-heading">QUICK LINKS</h4>
+              <ul class="dest-links-list">
+                <li><a href="#" class="dest-link-item" data-jump="0">&rarr; Home</a></li>
+                <li><a href="#" class="dest-link-item" data-jump="1">&rarr; About</a></li>
+                <li><a href="#" class="dest-link-item" data-jump="2">&rarr; Services</a></li>
+                <li><a href="policies.html" class="dest-link-item">&rarr; Policies</a></li>
+                <li><a href="employees.html" class="dest-link-item">&rarr; Meet the Team</a></li>
+                <li><a href="login.html" class="dest-link-item">&rarr; Portal Login</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Contact Details -->
+            <div class="dest-col dest-col-contact">
+              <h4 class="dest-col-heading">CONTACT &amp; HOURS</h4>
+              <div class="dest-contact-stack">
+                <div class="contact-info-row">
+                  <span class="info-label">Email:</span>
+                  <a href="mailto:hr@company.com" class="info-value link-highlight">hr@company.com</a>
+                </div>
+                <div class="contact-info-row">
+                  <span class="info-label">Phone:</span>
+                  <a href="tel:+96265550123" class="info-value link-highlight">+962 6 555 0123</a>
+                </div>
+                <div class="contact-info-row">
+                  <span class="info-label">Address:</span>
+                  <span class="info-value">King Abdullah St, Amman</span>
+                </div>
+                <div class="contact-info-row">
+                  <span class="info-label">Working hours:</span>
+                  <span class="info-value">Sun&ndash;Thu, 9:00&ndash;17:00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 4: EXACT Google Maps iframe from source -->
+            <div class="dest-col dest-col-map">
+              <h4 class="dest-col-heading">OFFICE LOCATION</h4>
+              <div class="footer__map-card">
+                <iframe 
+                  title="Office Location Map"
+                  src="https://maps.google.com/maps?q=King%20Abdullah%20St,%20Amman,%20Jordan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+
+                <a href="https://maps.google.com/?q=King+Abdullah+St,+Amman,+Jordan" target="_blank" rel="noopener" class="footer__map-btn">
+                  Open Maps &nearr;
+                </a>
+              </div>
+            </div>
+
+          </div><!-- End .destination-grid -->
+
+          <!-- Footer Bottom Action & Legal Bar -->
+          <div class="destination-bottom-bar">
+            <div class="dest-copyright">
+              &copy; 2026 HR Management System. All rights reserved.
+            </div>
+            <div class="dest-bottom-actions">
+              <a href="login.html" class="stop-cta-btn finish-cta-btn">
+                <span>LOG IN TO PORTAL &rarr;</span>
+              </a>
+              <button type="button" class="stop-secondary-link restart-link" id="restartJourneyBtn" data-jump="0">
+                &larr; Back to start
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div><!-- End .journey-stage -->
+
+    <!-- ======================================================================
+         SCROLL SPACER: TALL CONTAINER DRIVING THE GSAP SCROLLTRIGGER (900vh for 9 stops)
+         ====================================================================== -->
+    <div class="journey-scroll-spacer" id="journeyScrollSpacer" aria-hidden="true"></div>
+
+  </div><!-- End .journey root -->
+
+  <!-- Isolated Journey Controller Script -->
+  <script src="landing-journey.js"></script>
+</body>
+</html>
