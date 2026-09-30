@@ -7,7 +7,7 @@
  * camera focal tracking, 9-stop dwell/travel phases, and lifecycle cleanup.
  *
  * STRICT BOUNDARIES:
- * - ZERO auth touch: Connects directly to existing login.html
+ * - ZERO auth touch: Self-contained presentation-only portal overview stop
  * - ZERO storage access: Does not read or write localStorage/sessionStorage
  * ============================================================================
  */

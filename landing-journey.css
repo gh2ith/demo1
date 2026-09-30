@@ -5,6 +5,36 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   0. GLOBAL RESET & BASE DEFAULTS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: #F7FAFC;
+  color: #172033;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F7FAFC;
+  color: #172033;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
    1. ROOT VARIABLES & SCOPED WRAPPER (Clean White & Blue Identity)
    -------------------------------------------------------------------------- */
 .journey {

@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quantico:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Scoped Journey Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="landing-journey.css" />
 
   <!-- GSAP 3.12.5 & ScrollTrigger via Verified Fast CDN -->
@@ -54,7 +53,7 @@
       </nav>
 
       <!-- Always-Visible Login Button calling existing route -->
-      <a href="login.html" class="header-login-btn" aria-label="Sign in to the HR Management System">
+      <a href="#stop-8" data-jump="8" class="header-login-btn" aria-label="Sign in to the HR Management System">
         <span>Login</span>
         <span class="header-login-arrow" aria-hidden="true">&rarr;</span>
       </a>
@@ -273,7 +272,7 @@
               <span>Get started</span>
               <span class="btn-icon" aria-hidden="true">&darr;</span>
             </button>
-            <a href="login.html" class="stop-secondary-link">Sign In &rarr;</a>
+            <a href="#stop-8" data-jump="8" class="stop-secondary-link">Sign In &rarr;</a>
           </div>
           <div class="start-scroll-hint" id="startScrollHint">
             <span>Scroll to explore the journey &darr;</span>
@@ -302,7 +301,7 @@
             Hundreds of releases, zero surprises. Reliable operations aligned in real time with enterprise-grade security and role-based access.
           </p>
           <div class="stop-actions-row">
-            <a href="login.html" class="stop-cta-btn">
+            <a href="#stop-2" data-jump="2" class="stop-cta-btn">
               <span>Learn more</span>
               <span class="btn-icon" aria-hidden="true">&rarr;</span>
             </a>
@@ -358,7 +357,7 @@
           </div>
 
           <div class="stop-actions-row">
-            <a href="leave-hr.html" class="stop-cta-btn">
+            <a href="#stop-3" data-jump="3" class="stop-cta-btn">
               <span>Open Leave Portal</span>
               <span class="btn-icon" aria-hidden="true">&rarr;</span>
             </a>
@@ -418,7 +417,7 @@
           </div>
 
           <div class="stop-actions-row">
-            <a href="employees.html" class="stop-cta-btn">
+            <a href="#stop-4" data-jump="4" class="stop-cta-btn">
               <span>View Employees</span>
               <span class="btn-icon" aria-hidden="true">&rarr;</span>
             </a>
@@ -477,7 +476,7 @@
           </div>
 
           <div class="stop-actions-row">
-            <a href="policies.html" class="stop-cta-btn">
+            <a href="#stop-5" data-jump="5" class="stop-cta-btn">
               <span>Company Policies</span>
               <span class="btn-icon" aria-hidden="true">&rarr;</span>
             </a>
@@ -539,7 +538,7 @@
           </div>
 
           <div class="stop-actions-row">
-            <a href="tasks.html" class="stop-cta-btn">
+            <a href="#stop-6" data-jump="6" class="stop-cta-btn">
               <span>Manage Tasks</span>
               <span class="btn-icon" aria-hidden="true">&rarr;</span>
             </a>
@@ -584,7 +583,7 @@
           </div>
 
           <div class="stop-actions-row">
-            <a href="feedback.html" class="stop-cta-btn">
+            <a href="#stop-7" data-jump="7" class="stop-cta-btn">
               <span>Submit Feedback</span>
               <span class="btn-icon" aria-hidden="true">&rarr;</span>
             </a>
@@ -652,7 +651,7 @@
               <span>All 12 Departments Connected &bull; 99.98% System Uptime</span>
             </div>
             <div class="stop-actions-row">
-              <a href="login.html" class="stop-cta-btn">
+              <a href="#stop-8" data-jump="8" class="stop-cta-btn">
                 <span>Enter Workspace</span>
                 <span class="btn-icon" aria-hidden="true">&rarr;</span>
               </a>
@@ -710,9 +709,9 @@
                 <li><a href="#" class="dest-link-item" data-jump="0">&rarr; Home</a></li>
                 <li><a href="#" class="dest-link-item" data-jump="1">&rarr; About</a></li>
                 <li><a href="#" class="dest-link-item" data-jump="2">&rarr; Services</a></li>
-                <li><a href="policies.html" class="dest-link-item">&rarr; Policies</a></li>
-                <li><a href="employees.html" class="dest-link-item">&rarr; Meet the Team</a></li>
-                <li><a href="login.html" class="dest-link-item">&rarr; Portal Login</a></li>
+                <li><a href="#stop-4" class="dest-link-item" data-jump="4">&rarr; Policies</a></li>
+                <li><a href="#stop-3" class="dest-link-item" data-jump="3">&rarr; Meet the Team</a></li>
+                <li><a href="#stop-8" class="dest-link-item" data-jump="8">&rarr; Portal Login</a></li>
               </ul>
             </div>
 
@@ -764,8 +763,8 @@
               &copy; 2026 HR Management System. All rights reserved.
             </div>
             <div class="dest-bottom-actions">
-              <a href="login.html" class="stop-cta-btn finish-cta-btn">
-                <span>LOG IN TO PORTAL &rarr;</span>
+              <a href="#stop-8" data-jump="8" class="stop-cta-btn finish-cta-btn" id="portalDemoBtn">
+                <span>PORTAL OVERVIEW &rarr;</span>
               </a>
               <button type="button" class="stop-secondary-link restart-link" id="restartJourneyBtn" data-jump="0">
                 &larr; Back to start
